@@ -1,0 +1,402 @@
+%This is a back up
+\section{摘要}
+
+随着大数据相关应用和技术的发展，种类繁多的数据、越来越快的生成速率以及越发庞大的数据量使得如何快速地进行模型训练，以及如何让模型随着数据的增加而持续快速更新成为当前数据分析任务的趋势。增量学习算法，尤其是以数据增量的算法是解决这个问题的可行之路。该领域的研究在过去几十年里取得了一定的成果，但在当前数据爆炸式发展的背景之下离真实应用还存在一定的距离。与此同时，近年来兴起的极限学习机又为快速模型的训练和更新提供了新的工具和思路。如何结合这两部分内容，为实际应用问题提供具备快速训练和更新能力的分析模型是当前行业和技术发展的需求。
+
+
+基于以上考虑，论文归纳总结增量学习的相关研究，并从基于极限学习机的增量学习算法模型入手，通过从理论模型研究到具体问题场景的应用来探索贴近行业应用的建模思路和方法。在增量学习研究领域中，论文围绕以数据增量为核心的增量学习算法，一方面通过结合不同以极限学习机为基础的增量学习模型，提出更有效的基础理论模型，另一方面以具体应用领域的具体问题为背景，通过结合迁移学习和极限学习机的相关理论，提出了更加适应应用场景的在线学习算法。论文的主要研究内容分为以下五个部分：
+\begin{enumerate}
+\item[1)]针对基础理论模型的研究，论文提出了在线顺序增量极限学习机。在极限学习机的增量学习模型中，基于数据增量的模型能够快速地结合新增数据进行模型的更新，但是需要事先确定合适的网络结构。论文在该过程中结合基于结构增量的学习模型，在分类/回归误差变化量变大时同时进行结构增量，通过同步提升极限学习机网络的表达能力来提升模型性能。为了确保求解过程的稳定，论文在更新过程中通过分块矩阵的广义逆矩阵的秩一修正替换原本的逆矩阵求解过程，进一步提升模型性能。
+\item[2)]针对具体应用领域，论文提出了加权领域迁移极限学习机及其在线学习算法。作为理论研究到实际应用领域的探索，论文选取了当前飞速发展的传感器领域，以气体传感器漂移补偿为应用背景。为了进一步贴近实际应用中难以有效标记数据的问题，论文以半监督学习模型为基础，通过结合领域自适应的相关技术进行数据增量的建模。在分析了气体传感器数据的基础之上，论文针对现有模型在数据不平衡状况下的缺陷，设计了以聚类辅助的加权学习算法，提升了模型在标记数据不足时的分类性能。在此基础之上，论文进一步就未标记数据的增量推导了在线学习算法，使模型能够在数据增量的场景下快速更新。
+\item[3)]在前一个研究内容的基础之上，论文针对同样的问题进一步研究更加复杂的数据增量场景，提出了提出了基于源领域的在线领域自适应极限学习机模型。为了在半监督学习的框架下配合对应的学习模型，同时减小对人工标记的需求，论文首先分析了在线采样策略需要具备的特点，并提出了两种在线采样策略。然后在此基础之上分析目标函数中标记数据的增量提出了基于源领域的在线领域自适应极限学习机模型。通过
+
+\item[4)]在前一个研究内容的基础之上，论文针对同样问题提出了基于目标领域在线领域自适应极限学习机模型。在半监督学习的框架下，实际应用中标记和未标记数据的变化情况包括各自单独的增量变化以及数据由未标记数据到标记数据的变化，每一种变化情况需要有相应的增量学习算法与之对应。为了配合对应的学习模型，同时减小对人工标记的需求，论文分析了在线采样策略需要具备的特点，并提出了两种在线采样策略。此外，论文基于两类领域自适应模型的假设，在三种数据变化的基础之上分别提出了两类基于极限学习机的在线领域自适应模型。为了说明模型的有效性，论文通过一个定量实验说明了所提算法的时间效益优于批处理算法，然后通过两个定性实验说明了在不同采样策略下的算法分类性能优于其它分类算法。
+\end{enumerate}
+作为总结，论文在分析了当前研究内容局限性的基础之上，对基于极限学习机的增量学习的发展前景进行了展望。其中主要包括当前研究内容没有涉及的非监督学习领域的建模思路，以及在图像、视频和自然语言等具体应用领域的改进方向。
+
+\section{摘要2}
+随着大数据相关应用和技术的发展，种类繁多的数据、越来越快的生成速率以及越发庞大的数据量使得如何快速地进行模型训练，以及如何让模型随着数据的增加而持续快速更新成为当前数据分析任务的趋势。增量学习算法，尤其是以数据增量的算法是解决这个问题的可行之路。该领域的研究在过去几十年里取得了一定的成果，但在当前数据爆炸式发展的背景之下离真实应用还存在一定的距离。与此同时，近年来兴起的极限学习机又为快速模型的训练和更新提供了新的工具和思路。如何结合这两部分内容，为实际应用问题提供具备快速训练和更新能力的分析模型是当前行业和技术发展的需求。
+
+
+基于以上考虑，论文归纳总结增量学习的相关研究，并从基于极限学习机的增量学习算法模型入手，通过从理论模型研究到具体问题场景的应用来探索贴近行业应用的建模思路和方法。在增量学习研究领域中，论文围绕以数据增量为核心的增量学习算法，一方面通过结合不同以极限学习机为基础的增量学习模型，提出更有效的基础理论模型，另一方面以具体应用领域的具体问题为背景，通过结合迁移学习和极限学习机的相关理论，提出了更加适应应用场景的在线学习算法。论文的主要研究内容分为以下五个部分：
+\begin{enumerate}
+\item[1)]作为研究工作的理论研究的一环，论文对极限学习机的相关理论、基于极限学习机的增量学习模型和极限学习机的应用研究进行了归纳总结。论文分析了极限学习机的特点、理论模型和相关应用研究。
+通过将基于极限学习机的增量学习研究划分为基于模型结构增量和数据增量的研究，论文分别陈述了对应的代表模型、相关改进和解决的问题。作为论文的研究基础，该部分的研究内容为后续研究的推进提供了改进思路和重要参考。
+%这个不能作为主要研究内容，最好作为
+\item[2)]针对基础理论模型的研究，论文提出了在线顺序增量极限学习机。在极限学习机的增量学习模型中，基于数据增量的模型能够快速地结合新增数据进行模型的更新，但是需要事先确定合适的网络结构。论文在该过程中结合基于结构增量的学习模型，在分类/回归误差变化量变大时同时进行结构增量，通过同步提升极限学习机网络的表达能力来提升模型性能。为了确保求解过程的稳定，论文在更新过程中通过分块矩阵的广义逆矩阵的秩一修正替换原本的逆矩阵求解过程，进一步提升模型性能。
+\item[3)]针对具体应用领域，论文提出了加权领域迁移极限学习机及其在线学习算法。作为理论研究到实际应用领域的探索，论文选取了当前飞速发展的传感器领域，以气体传感器漂移补偿为应用背景。为了进一步贴近实际应用中难以有效标记数据的问题，论文以半监督学习模型为基础，通过结合领域自适应的相关技术进行数据增量的建模。在分析了气体传感器数据的基础之上，论文针对现有模型在数据不平衡状况下的缺陷，设计了以聚类辅助的加权学习算法，提升了模型在标记数据不足时的分类性能。在此基础之上，论文进一步就未标记数据的增量推导了在线学习算法，使模型能够在数据增量的场景下快速更新。
+\item[4)]在前一个研究内容的基础之上，论文针对同样问题进一步研究更加复杂的数据增量场景，分别提出了基于源领域和基于目标领域的两种在线领域自适应极限学习机模型。在半监督学习的框架下，实际应用中标记和未标记数据的变化情况包括各自单独的增量变化以及数据由未标记数据到标记数据的变化，每一种变化情况需要有相应的增量学习算法与之对应。为了配合对应的学习模型，同时减小对人工标记的需求，论文分析了在线采样策略需要具备的特点。此外，论文基于两类领域自适应模型的假设，在三种数据变化的基础之上分别提出了两类基于极限学习机的在线领域自适应模型。为了说明模型的有效性，论文通过一个定量实验说明了所提算法的时间效益，然后通过两个定性实验说明了在不同采样策略下的算法分类性能。
+\item[5)]作为最后一个研究内容，论文在分析了当前研究内容局限性的基础之上，对基于极限学习机的增量学习的发展前景进行了展望。其中主要包括当前研究内容没有涉及的非监督学习领域的建模思路，以及在图像、视频和自然语言等具体应用领域的改进方向。
+\end{enumerate}
+
+\section{Ch1}
+随着机器学习领域的技术进步和发展，为了应对大数据时代带来的挑战，选择新兴的具有快速学习能力和性能，并且能够被有效用作增量学习的算法是数据科学也是人工智能等领域发展的一个重要需求。作为新兴的机器学习算法，极限学习机（Extreme Learning Machine, ELM）因其极短的学习时间和在分类、回归问题中展现的良好性能受到了广泛关注。在该领域中，与增量学习相关的算法研究和应用也在近年来得到了极大的关注和发展。与传统神经网络的学习过程最大的不同之处在于，网络参数的求解由原来的迭代式调整的方式转变为随机化和线性解方程，从而极大地缩减了学习时间。与此同时，ELM在各类分类和回归问题上的泛化性能却没有在这个过程中弱化。Lin等人\citing{liu2015extreme}和Liu等人\citing{lin2015extreme}在深入分析了ELM的泛化性能后指出，对应某些合适的激活函数，如多项式、sigmoid、Nadaraya–Watson函数等，ELM可以和那些经过调参后的单隐藏层前馈神经网络到达同样的最优泛化边界。其中，Lin等人也指出使用诸如高斯类型的激活函数可能会弱化ELM的泛化能力，但这样的过程可以通过同时训练多个ELM来缓解\citing{huang2012semi}。
+
+%简单概括来说，ELM是一类基于单隐藏层的随机化神经网络。从结构上看，ELM由输入层、隐藏层和输出层三层构成的一个前馈神经网络，其中，隐藏层节点选用非线性分段连续激活函数。与传统神经网络不同，极限学习机的训练过程主要通过随机化映射和线性参数求解完成。对于一个给定的数据集，ELM通过随机化生成的隐藏层节点来将原始数据映射到ELM的特征空间中，再通过结合Moore-Penrose广义逆矩阵直接计算优化目标的线性解方程。
+
+在具体应用场景问题的建模中，ELM也受到了广泛应用。在面对医疗和生物制药领域中的高维海量数据，通过使用ELM进行数据分析在过去几年因其学习性能受到了广泛关注，包括预测蛋白质之间的互动\citing{you2013prediction}、癫痫患者EEG模式识别\citing{song2012automatic,yuan2011epileptic}、基于EEG的失眠症估计\citing{shi2013eeg}、横跨膜β-桶链检测\citing{savojardo2011improving}、甲状腺疾病诊断\citing{li2012computer}等。在机器视觉方面，ELM也被应用到了包括人脸识别\citing{baradarani2013efficient,choi2012incremental,marques2013fusion}、人体动作识别
+\citing{minhas2010human,minhas2012incremental}、基于地势导航\citing{kan2013extreme}、指纹识别\citing{yang2013fingerprint}等方向。在图像处理方面，近年来也诞生了诸如基于ELM的超高清图像生成技术\citing{an2012image}和地表变化检测\citing{chang2010change}的研究。
+
+作为极限学习机的一大特点，随机化虽然减轻了学习过程带来的计算压力，但同时也使得其性能随着随机化的不同变得不太稳定\citing{huang2006extreme}，即在同一数据集上不同随机化后的节点带来的模型准确率会有明显变化。此外，选择合适数目的ELM也是一个重要问题。在机器学习领域，这样的问题可以统一归结为模型选择。在解决这个问题的过程中，一部分研究者选择预先设置一个较大数目的隐藏层节点，然后通过删减节点的方式来达到目的；而另一部分研究者选择从一个较小数目的节点数增加节点的方式，即增量极限学习机（I-ELM）\citing{luo2014sparse}。这里所提的增量学习主要指的是极限学习机模型上的学习能力，即在给定数据集的情况下，模型能够通过逐步修改结构以减小学习误差的形式来选择提高模型对数据的表示能力。增量极限学习机是极限学习机的一个重要变形。事实上，极限学习机的全局近似逼近能力就是在增量学习的框架下被证明的\citing{luo2014sparse,lin2015extreme}。最早提出的I-ELM在整个过程中将逐个生成的隐藏层节点加入到的现存的ELM网络中。在随后提出的EI-ELM中，算法在每一步会随机生成k个节点，并从中选择会让全局误差下降最多的节点加入到网络中\citing{zhao2014class}。后来，Feng等人通过增量后的新旧隐藏节点来降低训练误差的方式提出了一种更有效的极限学习机模型EM-ELM\citing{huang2007convex}。Zhang等人在进一步分析勒贝格可积的函数作为激活函数的情况下ELM的近似逼近能力，并证明了正在该条件下ELM随机化节点中参数的连续性，并以此为基础提出了自适应增长节点的AG-ELM\citing{huang2008enhanced}。随后，Zhang等人进一步结合I-ELM对全局误差减小的作用，进一步提出了D-ELM来自适应选择合适的ELM网络结构\citing{zhang2013dynamic}。
+虽然ELM的隐藏层节点可以随机生成，但经典ELM要求在学习过程开始之前，训练数据被完整地搜集和处理过。然而，在大多数应用场景下，尤其是在大数据背景之下，事先搜集完整的数据用于训练无论从可行性还是业务场景下都不太现实。更常见的场景是训练数据按一定顺序到达。针对这样的处理场景，Liang等人提出了OSELM，该模型能够将逐个或者逐块，固定或是可变的数据增量用于模型的更新\citing{liang2006fast}。在此基础之上，Zhang等人进一步提出了具有遗忘机制的极限学习机模型FOSELM来反应数据本身在时间维度上的有效期\citing{zhao2012online}。这样的模型能够在训练过程中剔除过时数据，并及时反映数据分布的变化情况，在诸如交通流量数据的预测问题上有很好的应用。此外，通过结合TSK模糊模型，Rong等人提出了OS-Fuzzy-ELM\citing{rong2009online}。Ye等人随后将OSELM扩展到训练非静态时变数据的场景\citing{ye2013online}。
+
+综上所述，随着大数据时代的到来，海量数据的处理任务不可避免地设计增量学习算法的方方面面。极限学习机作为新兴的具体机器学习方法，因为其快速学习能力和良好的泛化性，不仅在理论方面得到了巨大发展，也在模型结构和数据增量学习的研究中取得了一定阶段性成果。然而，理论研究并不是随时都契合实际应用的需求。具体的应用下，基于极限学习机的增量学习研究仍有可发展的空间，并且符合未来几年机器学习任务发展的方向。
+
+
+机器学习任务要求对数据进行预处理，这样的过程通常需要涉及数据分布的分析。而随着大数据时代的到来，在机器学习任务中需要面对的一个常见情况是如何将持续产生的数据纳入到现有模型中进行知识的学习和发现。一方面，因为数据不断产生和到达的特点，在此之前搜集的数据上构建的模型所反映的数据分布可能随着新数据的引入而发生变化，此时学习的过程需要同时反映新旧数据的信息；另一方面，由于不断有新数据的到达，对这样的数据进行存储和操作又对现有系统的存储能力提出了更高的需求。因此，时间和存储的开销是这样的学习过程需要着重解决的问题，而增量学习方式是解决这一问题的有效途径。
+
+
+在半监督领域，特点是什么，有哪些算法
+
+
+在无监督领域，特点是什么，有哪些算法
+
+Adaptive Resonance Theory (ART) is again a popular concept that is been used with unsupervised neural network for incremental learn. Having different variants that are specific to the type of data, [16] propose modified ART, that handles mixed data attributes, that is again based on distance hierarchy. Further to improve the learning, [17] propose rough sets based approach. The emphasis here is on the clustering of interval data, where dissimilarity function between the representative points of the clusters is defined. Taking it further, [18] propose incremental methods for trajectories. [19] propose methods defining minimum bounding boxes and rectangles to locate the path for clustering of mobile objects.
+Methods of incremental clustering are also been used in pattern based reasoning, where new patterns are incrementally learnt with base of neural network [20] comprising of learning and reasoning phases to support the decisions. Further the technique is used in understanding of the document layout, where the papers belonging to journals of Elsevier, Machine Learning are categorized based on first order logic [21].
+It is necessary to make a note that the data sets differ in memory requirements depending on the type of data. The approach selected should be such that the required outcomes or the categorization should be achieved at a faster pace.
+From the related study it is worth to mention that most of the incremental clustering for pattern discovery rely on similarity measure between the data points, where as some are managed by threshold. Though we can always get and come up with other combination techniques so as to improve and manage the data in a better way, the outcome should not affect the existing knowledge
+
+
+在有监督和半监督领域的增量学习中，更多的是需要考虑训练数据持续增加的情况。
+With pattern based techniques, [22] propose learning of new chunk of patterns keeping intact the previous ones on the basis of neural network, where the same can be applied in text domain [23].
+In order to avoid the training phase, and update with each new training data that is evolved over the time, ensemble base methods are used [4]. [24] suggest a Learn++, an approach inspired by Adaboost, working on neural network based ensemble classifiers working on digital optics database. Further [25] propose ADAIN, an adaptive framework which focus on use of nonlinear regressive models, but comparatively faster than Learn ++. [26] adopt the Gaussian mixture model and Resource allocating NN for the learning with its application in a dormitory to study the habits of the students.
+Performance driven data selection model is another approach [27] where selective incremental learning occurs for the unlabeled data, taking decision to learn from specific data sets that are classified to learn further.
+A wide application to have a robot to learn manipulative tasks by use of Markov methods is [28] proposed, where initial stage teaching occurs and later the robot learns.
+Extending the approach in medical image segmentation, [29] propose Ripple down rules for knowledge acquisition, where as Bayesian approach is proposed [30] to detect emergency in health surveillance.
+Alike [31] propose its use in sports video view classification explicitly in baseball presenting a new distance measure along with a threshold criteria building positive and negative model pools. The discovery of interesting patterns further has given rise to [32] learning in detection of objects occurring in the images in hierarchy. Incremental detection and classifying the new images with existing objects is applied here. In case of face recognition too, incremental learning has taken a step ahead, [33] propose method for adaptive learning of new features and classifiers. Here the feature space is tuned with use of neural networks where Resource Allocating Network and Long Term Memory model is used.
+SVM are found to be effective in large number of classification and regression problem. [34] discuss of their use in the optical character recognition has found a new area, with ensembles of SVMs in operation. Ensemble based methods are further used with dynamic weighting scheme that is built for extra training models over the earlier ones giving incremental approach for new training data sets when available in batches as suggested by [35]. [36] focus on ensemble methods to learn concept drift; that are characterized by non-stationary environment applying the approach on weather prediction system where the Learn++ approach is extended.
+
+Scenarios：
+To focus a few, [37] present a survey on the different techniques of incremental learning of HMM parameters. The work reviews batch learning techniques for estimation of HMM parameters, trying to remove the impact of use of HMM as priori methods with limited data.
+Further, incremental and reinforcement learning and whole system learning could be the next big thing. [38] propose use of incremental reinforcement learning designed for operation in multi- agent scenario. The work is based on modified version of Q-Learning, where the agent is faced with number of tasks that it learns.
+Incremental learning in query formulation is explored by [39], where it assists the user to form query, from arbitrary to structured one trying to bridge the gap between the queries formed to the effectiveness that it can be retrieved.
+Very recently incremental approach for managing the concept drift of data distributions [40] is proposed. The domain identified was remote sensing images for land cover classifications. With the kernel function in operation and on the basis of Markov chain, the learning process is active, making the addition and deletion of the training vectors.
+
+
+Methods/ Algorithms
+Application Domain
+Bayesian, GRIN, BIRCH, DBSCAN Relational databases/ Warehouse Neural Network, Centroid based methods Web pages / Document layout ART, NN, Rough sets
+Document clustering
+Minimum bounding boxes Pattern matching – Neural Network
+Mobiles/ trajectories Text classification
+Ensemble based methods, Learn++, ADAIN
+Digital optics
+Gaussian distributions, Neural Networks Students behavior pattern Markov chaining
+Robots
+Bayesian learning, Resource Allocation Network
+Medical Image segmentation/ Sports video
+SVM, Ensemble methods, Dynamic weighing
+Optical character/ Text document Concept drift, Ensemble methods Weather Prediction/ Data streams Table
+
+%这里给个表格展示解决的应用场景和对应的数量
+以不同的数据类型和研究方法为线索，可以分别从文本、图像
+
+关于文本和图的聚类，这类聚类方法中大多基于距离度量，而聚类的直径被用来作为决策的依据。
+Incremental clustering and dynamic information retrival
+Incremental document clustering using Cluster similarity histograms
+此外，累加的数据和聚类之间的相似性度量也在一些方法中被用来作为决策的依据。
+An incremental clustering for relational data sets
+
+
+这里应该介绍一下增量学习在近年来的研究和应用现状，可以按照年份进行分类，同时辅以类别，即每年有哪些领域的研究和应用，这样反映出逐年的变化情况。
+
+Incremental methods for web pages categorization are also now making a place
+
+
+有必要限制一下讨论的范畴，这里局限在学习算法本身，这里有必要按照监督、半监督和非监督的方式来陈述三种对应的研究方向的发展。
+
+在监督学习领域，诸如SVM这样的算法越来越多的得到了工业应用和关注，对应的，其增量学习算法也应运而生。巴拉巴拉吧
+
+
+%那么关于增量学习的研究，基于Google Scholar的数据,以incremental Learning 为词条的
+%2006：33300
+%2007：38700
+%2008： 41000
+%2009： 44700
+%2010： 46100
+%2011： 46900
+%2012： 51100
+%2013： 50300
+%2014： 47400 
+%2015： 42400
+%2016： 39200
+%2017： 30900
+%2018.6：13000
+%
+%增加了Online learning 的词条的
+%2006:  11,700 
+%2007: 15,000
+%2008: 16,700
+%2009: 20,500
+%2010:23,100
+%2011: 26,700
+%2012:30,800
+%2013:32,000 
+%2014：32,900 
+%2015：33,000
+%2016： 32,000
+%2017：29,300
+%2018:10,400
+
+
+%介绍国内的研究现状，分析国内外差距
+%那么关于增量学习的研究，基于百度学术的数据,以“增量学习”为词条的
+%2006：2130
+%2007：2640
+%2008： 2520
+%2009： 3030
+%2010： 2540
+%2011： 2820
+%2012： 3130
+%2013： 3130
+%2014： 2990
+%2015： 3270
+%2016： 3100
+%2017： 2810
+%2018.6：
+%
+%增加“在线学习”为词条
+%2006：1970
+%2007：2400
+%2008： 2390
+%2009： 2900
+%2010： 2470
+%2011： 2720
+%2012： 3040
+%2013： 3020
+%2014： 2900
+%2015： 3160
+%2016： 2900
+%2017： 2590
+
+\section{Ch3}
+经典ELM模型的数学表达可以概括为(\ref{equ:ELM_form})。
+\begin{equation}
+\label{equ:ELM_form}
+f(x)= \sum\limits_{i=1}^{L}\beta_i g(a_i, b_i, x)
+\end{equation}
+
+
+其中，$a_i$,$b_i$是随机化的隐藏层节点参数，$\beta_i$是隐藏层到输出层的权重， 是隐藏层的节点个数。ELM的学习过程等价于找到合适的$\beta_i$来优化目标(\ref{equ:ch3_ELM_optimal})。
+\begin{equation}
+\label{equ:ch3_ELM_optimal}
+\min \Vert H\beta -T \Vert^2
+\end{equation}
+
+其中， $H$是隐藏层对应训练数据集的输出矩阵，公式为(\ref{equ:ch3_ELM_H})， 是训练样本的个数。ELM在求解这个优化问题的过程中引入了广义逆矩阵来避免出现不稳定的参数，最后的权值函数由(\ref{equ:ch3_ELM_beta})计算得到。
+\begin{equation}
+\label{equ:ch3_ELM_H}
+H=\begin{bmatrix}[0.6]
+g(a_1,b_1,x_1) & \cdots & g(a_L,b_L,x_1) \\
+g(a_1,b_1,x_2) & \cdots & g(a_L,b_L,x_2) \\
+\vdots & \vdots & \vdots \\
+\vspace{5 pt}	%调整间距用的
+g(a_1,b_1,x_N) & \cdots & g(a_L,b_L,x_N) \\
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\label{equ:ch3_ELM_beta}
+\beta=H^{\dagger} T
+\end{equation}
+
+\subsection{实验}
+%\begin{table}[H]
+%	\caption{四种算法在US60上全年的预测性能} 
+%	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+%		\hline  
+%		\multirow{2}{*}{\multicolumn{1}{|c}{方法}} & \multicolumn{12}{c|}{月份} & \multirow{2}{*}{平均} \\
+%		\cline{2-13}
+%		& 一月 & 二月 & 三月 & 四月 & 五月 & 六月 & 七月 & 八月 & 九月 & 十月 & 十一月 & 十二月 & 平均 \\
+%		\hline
+%		ELM & 0.433 & 0.703 & 0.408 & 0.582 & 0.707 & 0.534 & 0.573 & 0.581 & 0.588 & 0.543 & 0.560 & 0.619 & 0.569 \\
+%		I-ELM & 0.293 & 0.369 & 0.278 & 0.340 & 0.485 & 0.368 & 0.367 & 0.393 & 0.411 & 0.382 & 0.359 & 0.409 &  0.371 \\
+%		OSELM & 0.235 & 0.228 & 0.219 & 0.270 & 0.268 & 0.275 & 0.286 &  0.281 & 0.282 & 0.275 & 0.291 & 0.286 & 0.266 \\
+%		OSIELM	& 0.230 & 0.220  & 0.209 & 0.221 & 0.263 & 0.275 & 0.279 & 0.280 & 0.284 & 0.266 & 0.289 & 0.284 & 0.258 \\
+%		\hline
+%	\end{tabular}
+%	\label{tab:ch3_traffic_rmse2}
+%\end{table}
+
+\section{Ch5}
+为了叙述的方便，本章将等式(\ref{equ:ODAELM_Beta_sol})右边拆分为两部分。令$Right=C_T H_T^T T_T + C_{Tu}H_{Tu}^T H_{Tu}\beta_S$，同时令当前ELM的中间结果为$K_{k}$，对应的，权重的输出可以表示为$\beta_{T}^{k}=K_{k}^{-1} Right_{k}$。当新样本$X_{i}$到达的时候，相应的隐藏层对应的输出可以表示为$\delta h$。类似OSELM，可以在第$k+1$次更新过程中使用中间结果$K^{-1}_{k+1}$，其中$K_{k+1}$表示为（\ref{equ:Case1_K_k+1}）。
+\begin{equation}
+\label{equ:Case1_K_k+1}
+\begin{aligned}
+K_{k+1} & =I+C_T H_T^T H_T +C_{Tu} (H_{Tu}^T H_{Tu}+ \delta h^T \delta h) \\
+& =K_k + C_{Tu}\delta h^T \delta h
+\end{aligned}
+\end{equation}
+
+随后，$Right_{k+1}$可以写作(\ref{equ:ODAELM_Case1_Right})。
+\begin{equation}
+\label{equ:ODAELM_Case1_Right}
+\begin{aligned}
+Right_{k+1}=Right_k + C_{Tu} \delta h^T \delta h \beta_S
+\end{aligned}
+\end{equation}
+
+基于Sherman-Morrison-Woodbury公式，$K_{k+1}$的逆可以表示为公式(\ref{equ:ODAELM_Case1_KI}).
+\begin{equation}
+\label{equ:ODAELM_Case1_KI}
+\begin{aligned}
+K_{k+1}^{-1}&=(K_{k}+C_{Tu}\delta h^T \delta h)^{-1} \\
+& =K_{k}^{-1}-C_{Tu}K_{k}^{-1} \delta h^T (I+ C_{Tu} \delta h K_{k}^{-1} \delta h^T)^{-1} \delta h K_{k}^{-1}
+\end{aligned}
+\end{equation}
+
+注意到其中$\beta_{T}^{k+1}=K_{k+1}^{-1} Right_{k+1}$。通过在等式(\ref{equ:ODAELM_Case1_Right})中的$Right_{k}$前乘以$K_k K_k^{-1}$，可以进一步获得$\beta_T^{k+1}$的表达式，即等式(\ref{equ:ODAELM_Case1_betaT})。
+\begin{equation}
+\label{equ:ODAELM_Case1_betaT}
+\begin{aligned}
+\beta_T^{k+1}&=K_{k+1}^{-1} (K_k K_k^{-1} Right_k + C_{Tu} \delta h^T \delta h \beta_S) \\
+&=K_{k+1}^{-1}(K_k \beta_T^{k} + C_{Tu}\delta h^T \delta h \beta_S)\\
+&=K_{k+1}^{-1}((K_{k+1}-C_{Tu} \delta h^T \delta h)\beta_T^{k}+C_{Tu} \delta h^T \delta h \beta_S) \\
+&=\beta_T^{k} - K_{k+1}^{-1} C_{Tu} \delta h^T \delta h (\beta_T^{k} -\beta_S)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\label{equ:ODAELM_Case2_K}
+\begin{aligned}
+K_{k+1}&=(I+C_T P + C_{Tu} P^{-1} Q_k Q_k^T +C_{Tu} P^{-1}H_T \delta h^T \delta h H_T^T) \\
+&  = K_k +C_{Tu} P^{-1} H_T \delta h^T \delta h H_T^T	
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\label{eua:ODAELM_Case2_Qk1}
+\begin{aligned}
+Q_{k+1} Q_{k+1}^T &= H_T \left[ \begin{matrix}
+H_{Tu}^T & \delta h^T 
+\end{matrix}\right]
+\left[
+\begin{matrix}
+H_{Tu} \\ \delta h
+\end{matrix}\right]
+H_T^T \\
+& =Q_k Q_k^T + H_T \delta h^T \delta h H_T^T
+\end{aligned}
+\end{equation}
+\begin{equation}
+\label{equ:ODAELM_Case2_Right}
+\begin{aligned}
+Right_{k+1}&=C_T T_T + C_{Tu} P^{-1}H_T (H_{Tu}^T H_{Tu} + \delta h^T \delta h) \beta_S \\
+& = Right_k +C_{Tu} P^{-1} H_T \delta h^T \delta h \beta_S
+\end{aligned}
+\end{equation}
+
+为了陈述的方便，这里令$\delta\ k= \delta h H_T^T$。类似的$K_{k+1}^{-1}$可以基于Sherman-Morrison-Woodbury公式，并通过等式(\ref{equ:ODAELM_Case2_KI})推导而来。
+\begin{equation}
+\label{equ:ODAELM_Case2_KI}
+\begin{aligned}
+K_{k+1}^{-1} & = K_{k}^{-1} -K_{k}^{-1} C_{Tu} P^{-1} (I+ \delta k^T \delta k K_{k}^{-1} C_{Tu} P^{-1})^{-1} \delta k^T \delta k K_{k}^{-1} \\
+\end{aligned}
+\end{equation}
+
+随后，网络的输出权重矩阵$\beta_T^{k+1}$可以推导为等式(\ref{equ:ODAELM_Case2_beta})。
+\begin{equation}
+\label{equ:ODAELM_Case2_beta}
+\begin{aligned}
+\beta_T^{k+1} &=H_T^T K_{k+1}^{-1} Right_{k+1} \\
+&=H_T^T K_{k+1}^{-1} (Right_k+C_{Tu} P^{-1} H_T \delta h^T \delta h \beta_S) \\
+&=H_T^T K_{k+1}^{-1} (K_k K_k^{-1}Right_k +C_{Tu} P^{-1} H_T \delta h^T \delta h \beta_S) \\
+%&=H_T^T K_{k+1}^{-1} ((K_{k+1}-C_{Tu}P^{-1}H_T \delta h^T \delta h H_T^T)K_k^{-1}Right_k+C_{Tu} P^{-1} H_T \delta h^T \delta h \beta_S)\\
+&=\beta_T^{k}- C_{Tu} H_T^{T} K_{k+1}^{-1} P^{-1}H_T \delta h^T \delta h (\beta_T^{k}-\beta_S) \\
+\end{aligned}
+\end{equation}
+
+\section{Reference}
+
+%[1] 王浩刚，聂在平.三维矢量散射积分方程中奇异性分析[J].电子学报，1999, 27(12): 68-71
+
+@article{wang1999sanwei,
+  title = {三维矢量散射积分方程中奇异性分析},
+  author = {王浩刚 and 聂在平},
+  journal = {电子学报},
+  volume = {27},
+  number = {12},
+  pages = {68--71},
+  year = {1999}
+}
+
+%[2] X. F. Liu, B. Z. Wang, W. Shao. A marching-on-in-order scheme for exact attenuation constant extraction of lossy transmission lines[C]. China-Japan Joint Microwave Conference Proceedings, Chengdu, 2006, 527-529
+
+@conference{liuxf2006,
+  author = {Liu, X F and Wang, Bing Zhong and Shao,Wei and Wen Wang},
+  title = {A marching-on-in-order scheme for exact attenuation constant extraction of lossy transmission lines},
+  year = {2006},
+  pages = {527-529},
+  address = {Chengdu},
+  booktitle = {China-Japan Joint Microwave Conference Proceedings}
+}
+
+%[3] 竺可桢.物理学[M].北京：科学出版社，1973, 56-60
+
+@book{zhu1973wulixue,
+  title = {物理学},
+  author = {竺可桢},
+  year = {1973},
+  address = {北京},
+  pages = {56-60},
+  publisher = {科学出版社}
+}
+
+%[4] 陈念永.毫米波细胞生物效应及抗肿瘤研究[D].成都：电子科技大学，2001, 50-60
+
+@thesis{chen2001hao,
+  AUTHOR = {陈念永},
+  TITLE = {毫米波细胞生物效应及抗肿瘤研究},
+  institution = {电子科技大学},
+  YEAR = {2001},
+  pages = {50-60},
+  address = {成都}
+}
+
+%[5] 顾春.牢牢把握稳中求进的总基调[N].人民日报，2012年3月31日
+
+@newspaper{gu2012lao,
+  AUTHOR = {顾春},
+  TITLE = {牢牢把握稳中求进的总基调},
+  JOURNAL = {人民日报},
+  date = {2012年3月31日}
+}
+
+%[6] 冯西桥.核反应堆压力容器的LBB分析[R].北京：清华大学核能技术设计研究院，1997年6月25日
+
+@techreport{feng997he,
+  AUTHOR = {冯西桥},
+  TITLE = {核反应堆压力容器的{LBB}分析},
+  institution = {清华大学核能技术设计研究院},
+  date = {1997年6月25日},
+  address = {北京}
+}
+
+%[7] 肖珍新.一种新型排渣阀调节降温装置[P].中国，实用新型专利，ZL201120085830.0, 2012年4月25日
+
+@patent{xiao2012yi,
+  AUTHOR = {肖珍新},
+  TITLE = {一种新型排渣阀调节降温装置},
+  date = {2012年4月25日},
+  type = {实用新型专利},
+  country = {中国},
+  id = {ZL201120085830.0}
+}
+
+%[8] 中华人民共和国国家技术监督局.GB3100-3102.中华人民共和国国家标准--量与单位[S]. 北京：中国标准出版社，1994年11月1日
+
+@standard{zhong1994zhong,
+  institution = {中华人民共和国国家技术监督局},
+  id = {GB3100-3102},
+  TITLE = {中华人民共和国国家标准--量与单位},
+  PUBLISHER = {中国标准出版社},
+  date = {1994年11月1日},
+  address = {北京}
+}
+
+@digital{clerc2010discrete,
+  author = {M. Clerc},
+  title = {Discrete particle swarm optimization: a fuzzy combinatorial box},
+  type = {EB/OL},
+  date = {July 16, 2010},
+  url = {http://clere.maurice.free.fr/pso/Fuzzy_Discrere_PSO/Fuzzy_DPSO.htm}
+}

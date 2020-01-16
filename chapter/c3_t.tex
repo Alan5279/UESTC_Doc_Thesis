@@ -1,0 +1,116 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\begin{document}
+
+\chapter{毕业论文其他格式参考}
+
+由于时域混合场积分方程是时域电场积分方程与时域磁场积分方程的线性组
+合，因此时域混合场积分方程时间步进算法的阻抗矩阵特征与时域电场积分方程
+时间步进算法的阻抗矩阵特征相同。
+
+\section{如何撰写公式}
+
+行内公式可以参考这样的形式$O(n_1 \cdot (n_1 + m))$。如果需要对公式进行编号，可以参考公式(\ref{equ:4-1})。
+\begin{equation}
+\label{equ:4-1}
+\begin{aligned}
+\beta_i^{j} &=H_i^T K_{k}^{-1} (K_k^{-1} +C_{m} \delta h^T \delta h) \\
+\end{aligned}
+\end{equation}
+
+跨行的公式可以参考公式(\ref{equ:4-2})。
+\begin{equation}
+\label{equ:4-2}
+\begin{aligned}
+\beta_i^{j} &=H_i^T K_{k}^{-1} (K_k^{-1} +C_{m} \delta h^T \delta h) \\
+& =H_i^T K_{k}^{-1} (K_k^{-1} +C_{m} \delta h^T \delta h) \\
+\end{aligned}
+\end{equation}
+
+向量的写法参考公式(\ref{equ:w-example})。
+\begin{equation}
+\label{equ:w-example}
+\begin{aligned}
+\renewcommand{\arraystretch}{0.5}
+w_i=\begin{bmatrix}
+\setlength{\parskip}{0 pt}
+P_1 & P_2 & 0 & P_4 & 0 & 0
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+
+\section{如何撰写一个枚举列表}
+
+有时候需要撰写一个列表，列表的格式可以参考下面这种：
+\begin{enumerate}[labelsep = .5em, leftmargin = 0pt, itemindent = 3.8em]
+\item[(1)]描述1；
+\item[(2)]描述2；
+\item[(3)]描述3；
+\item[(4)]重复(2)和(3)。
+\end{enumerate}
+
+\section{如何写一个大表格}
+
+有时候表格的表头比较复杂，具体需要用到multirow和multicolumn这两个环境，写法可以参考表\ref{tab:Perf_XX}。
+
+\begin{table}[h]
+\caption{一个表格示例。}
+\label{tab:Perf_XX}
+\centering
+%% \tablesize{} %% You can specify the fontsize here, e.g.  \tablesize{\footnotesize}. If commented out \small will be used.
+\renewcommand{\arraystretch}{0.8}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{\multirow{1}{*}{XX}} &
+\multicolumn{7}{c|}{XXXXXX} \\
+%\multicolumn{7}{c}{\multirow{2}{*}{\textbf{Accuracy (\%)}} \\
+\cline{2-8}
+\multicolumn{1}{|c|}{\multirow{1}{*}{XX}}
+	& \text{XX}	& \text{XX} & \text{XX} & \text{XX} & \text{XX} & \text{XX} & \text{XX}
+\\
+\hline
+XX	& XX	& XX  & XX & XX & XX & XX &  XX\\
+\hline
+XX	& XX	& XX  & XX & XX & XX & XX &  XX\\
+\hline
+XX	& XX	& XX  & XX & XX & XX & XX &  XX\\
+\hline
+XX	& XX	& XX  & XX & XX & XX & XX &  XX\\
+\hline
+XX	& XX	& XX  & XX & XX & XX & XX &  XX\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{如何写一个算法伪代码}
+
+原模板没有如何写伪代码，这里提供一个例子，如算法\ref{alg:Ch2_template}。
+需要注意的是，算法格式不跨行显示，所以需要根据大小调整在文中的位置。建议写完后根据文字占页情况调整下相应的位置。
+\vspace{-5 pt}
+\begin{algorithm}[htb!]
+\caption{如何写一个算法}
+\begin{algorithmic}[1]
+\REQUIRE ~~\\
+$data:=$输入数据；\\
+\ENSURE ~~\\ %算法的输出：Output
+$Out:=$输出数据；\\
+\STATE Initialization初始化；
+\FOR{for循环的条件}
+\IF {if的条件判断句，例如$| data |<k$}
+\STATE If语句中需要执行的程序；\\
+\ELSE
+\STATE	例外情况需要执行的语句；\\
+\WHILE{while循环的判断条件}
+\STATE	whil循环的操作； \\
+\ENDWHILE
+\ENDIF
+\ENDFOR
+\RETURN $Out$; \\%算法的返回值
+\end{algorithmic}
+\label{alg:Ch2_template}
+\end{algorithm}
+
+\section{本章小结}
+本章首先研究了时域积分方程时间步进算法的阻抗元素精确计算技术，分别采用DUFFY变换法与卷积积分精度计算法计算时域阻抗元素，通过算例验证了计算方法的高精度。
+
+\end{document}

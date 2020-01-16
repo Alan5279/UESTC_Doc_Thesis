@@ -1,0 +1,27 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\begin{document}
+
+%\chapter*{缩略词表}
+%\thispagestyle{fancy}
+%    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 缩略词表}
+%\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+%上面在设置格式
+\begin{thesisabbr}
+%\begin{table}[h]
+%	\begin{tabular}{p{2 cm}p{8cm}p{4 cm}} 
+{
+\renewcommand{\arraystretch}{0.7}
+%\xiaosihao
+\begin{longtable}{p{2.3 cm}@{\hskip 5 pt}p{7.7cm}@{\hskip 5 pt}p{4.2 cm}} 	%总宽15cm
+		\textbf{缩略词} & \textbf{英文全称} & \textbf{中文全称}\\
+		TD & Target Domain & 目标领域 \\
+		SD & Source Domain & 源领域 \\
+\end{longtable}
+%	\end{tabular}
+%\end{table}
+}
+
+\end{thesisabbr}
+
+\end{document}

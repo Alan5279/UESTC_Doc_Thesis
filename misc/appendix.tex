@@ -1,0 +1,98 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\usepackage{ulem}
+\begin{document}
+
+\thesisappendix
+
+\section{}
+\begin{lemma}
+\label{lem:Inverse}
+If $C_T,C_{Tu}>0$, $H_T \in R^{n_1*l}$ and $H_{Tu} \in R^{n_2 * l}$ are any arbitrary matrices defined in the paper, then $I+C_T P + C_{Tu} P^{-1}H_T H_{Tu}^T H_{Tu} H_T^T$ has inverse where $P=H_T H_T^T$.
+\end{lemma}
+\begin{proof}
+Let $A$ be defined as $A=I+C_T P + C_{Tu} P^{-1}H_T H_{Tu}^T H_{Tu} H_T^T$. Consider a sequence of rank-one updates of $A$ as $A_k=I+C_T P + C_{Tu} P^{-1}H_T (\sum_{i=0}^{k}h_i^T h_i) H_T^T$ where $h_i \in R^{1*l}$ is the $i$th row of $H_{Tu}$. If we can prove $A_k$ has inverse for any arbitrary column vector $h_i$, \ref{lem:Inverse} is proved.
+
+Let $A_k$ be written as (\ref{equ:ak}). Let $c_k=C_{Tu} P^{-1}H_T h_i$ and $d_k^T =h_i H_T^T$. Based on generalized inverse theory \cite{Campbell2009GENERALIZED}, the generalized inverse of $A_k$ has a unique form as (\ref{equ:ak_ginverse}) if $A_{k-1}$ has inverse and (\ref{equ:sequenceproof}) satisfies. It is easy to verify that, in this case, the generalized inverse of $A_{k-1}$ is the inverse. 
+\begin{equation}
+\label{equ:ak}
+A_k=A_{k-1}+C_{Tu} P^{-1}H_T h_i^T h_i H_T^T
+\end{equation}
+
+\begin{equation}
+\label{equ:ak_ginverse}
+\begin{aligned}
+A_k^{\dagger}&=A_{k-1}^{-1}-\frac{A_{k-1}^{-1}c_k d_k^T A_{k-1}^{-1}}{1+ d_k^T A_{k-1}c_k} 
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\label{equ:sequenceproof}
+\begin{aligned}
+%&A_{k-1}^{-1} \  exists, \\
+&1+d_k^T A_{k-1}^{-1} c_k \ne 0.
+\end{aligned}
+\end{equation}
+
+Therefore, the problem becomes proving that $A_{k-1}$ has inverse and (\ref{equ:sequenceproof}) stands. To achieve the goal, we can prove a stronger case as (\ref{equ:secondlemma}). 
+\begin{equation}
+\label{equ:secondlemma}
+\begin{aligned}
+d_k^T A_{k-1}^{-1} c_k \ge 0 \quad if \ A_{k-1}^{-1} \  exist
+\end{aligned}
+\end{equation}
+
+Let $A_0=I+C_T H_T H_T^T$ and $h$ be an arbitrary row of $H_{Tu}$. Note that $C_T >0$, so $A_{0}$ has inverse. Based on Woodbury's formula, we can write $A_0^{-1}$ as (\ref{equ:a0_inverse}).
+\begin{equation}
+\label{equ:a0_inverse}
+\begin{aligned}
+A_0^{-1}=I - C_T H_T (I+ C_T H_T^T H_T)^{-1}H_T^T
+\end{aligned}
+\end{equation}
+
+Let $A_1=A_0+c_1 d_1^T $ where $c_1=C_{Tu}P^{-1} H_T h^T$ and $d_1^T=h H_T^T$. Subsequently, we can write $d_1^T A_0^{-1}c_1$ as (\ref{equ:inver_a0}) by using Woodbury's formula. Note that $C_T H_T^T H_T$ is a positive semi-definite, so it is unitarily similar to a diagonal matrix, i.e. $H_T^T H_T=U diag(\epsilon_1,\epsilon_2,...,\epsilon_y) U^T$ where $\epsilon_1> \epsilon_2>...>\epsilon_y>0$. Similarly, $I+C_T H_T H_T^T$ is unitarily similar to a diagonal matrix, i.e. $I+C_T H_T H_T^T=U diag(1+C_T \epsilon_1, 1+C_T \epsilon_2,...,1+C_T \epsilon_y)U^T$. Note that they share the same $U$, therefore $d_1^T A_0^{-1}c_1 \ge 0$ stands. Consequently, $A_1$ has inverse.
+\begin{equation}
+\label{equ:inver_a0}
+\begin{aligned}
+d_1^T A_0^{-1}c_1 &= h H_T^T A_0^{-1} C_{Tu} P^{-1}H_T h^T \\
+&=C_{Tu} h H_T^T (I- C_T H_T (I+ C_T H_T^T H_T)^{-1} H_T^T)  P^{-1} H_T h^T \\
+&=C_{Tu} h(I-C_T H_T^T H_T (I+ C_T H_T^T H_T)^{-1})H_T^T P^{-1}H_T h^T \\
+&=C_{Tu} h (I-C_T H_T^T H_T)^{-1} H_T^T P^{-1}H_T h^T \\
+&=C_{Tu} h (I-C_T H_T^T (I+C_T H_T H_T^T)^{-1} H_T)H_T^T P^{-1} H_T h \\
+&=C_{Tu} h H_T^T (P^{-1}-C_T (I+ C_T H_T H_T^T)^{-1})H_T h^T \\
+&=C_{Tu} h H_T^T P^{-1}(I+C_T H_T H_T^T)^{-1}H_Th^T \\
+&=C_{Tu} h H_T^T P^{-1} A_0^{-1} H_T h^T \\
+\end{aligned}
+\end{equation}
+
+Based on (\ref{equ:inver_a0}), we can further define (\ref{equ:beta_0}) which is inversible.
+\begin{equation}
+\label{equ:beta_0}
+\begin{aligned}
+B_0 &= A_0^{-1} P^{-1}
+\end{aligned}
+\end{equation}
+
+Assume $A_k$ has inverse. By using Woodbury's formula, we can write $A_k^{-1}$ as (\ref{equ:a_k}).
+\begin{equation}
+\label{equ:a_k}
+\begin{aligned}
+A_k^{-1} & = (A_0 + C_{Tu} P^{-1} H_T H_{Tu}^T H_{Tu} H_T)^{-1} \\
+&= A_0^{-1} -C_{Tu} A_0^{-1} P^{-1} H_T H_{Tu}^T  (I+ C_{Tu} H_{Tu} B_0 H_{Tu}^T)^{-1} H_{Tu} H_T^T A_0^{-1} \\
+\end{aligned}
+\end{equation}
+
+For the case of $A_{k+1}=A_k +C_{Tu}P^{-1}H_T h^T h H_T^T$ where $h$ is an arbitrary row of $H_{Tu}$, we can combine (\ref{equ:beta_0}) and (\ref{equ:a_k}) to write $d_{k+1}^T A_k^{-1} c_{k+1}$ as (\ref{equ:A_k1_def}) where $c_{k+1}=C_{Tu} P^{-1}H_T h^T \in R^{n_1*1}$ and $d_{k+1}^T = h H_T^T \in R^{1*n_1}$. Note that $h$ is an arbitrary row of $H_{Tu}$. Similarly, we have $d_{k+1}^T A_k^{-1} c_{k+1} \ge 0$ stands.
+
+\begin{equation}
+\label{equ:A_k1_def}
+\begin{aligned}
+ d_{k+1}^T A_k^{-1} c_{k+1} &= C_{Tu} h H_T^T(B_0 - C_{Tu} B_0 H_{Tu}^T (I +  C_{Tu} H_{Tu} B_0  H_{Tu}^T)^{-1} H_{Tu} B_0)H_T h^T \\
+&=C_{Tu} h (B_0^{-1}+C_{Tu} H_{Tu}^T H_{Tu})^{-1} h^T \\
+\end{aligned}
+\end{equation}
+
+By using mathematical induction, we can prove that $d_{k}^T A_{k-1}^{-1} c_{k} \ge 0$ stands for any $k$. Subsequently, $A_k$ has inverse for any $k$. To sum up, Lemma \ref{lem:Inverse} has been proved.
+\end{proof}
+
+\end{document}

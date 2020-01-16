@@ -1,0 +1,30 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\begin{document}
+
+%\chapter*{主要符号表}
+%\thispagestyle{fancy}
+%    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 主要符号表}
+%\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+
+\begin{thesissymbols}
+
+{
+\renewcommand{\arraystretch}{1}
+
+\begin{table}[htb!]
+	\begin{tabular}{>{\xiaosihao}p{2 cm}>{\xiaosihao}p{8cm}}	%按列调整字体大小
+		\textbf{符号} & \textbf{说明} \\
+		$R^{m \times n}$ & $m \times n$维的实数空间 \\
+		$C^{m \times n}$ & $m \times n$维的复数空间	\\	
+	\end{tabular}
+\end{table}
+}
+
+\end{thesissymbols}
+
+%奇数页的时候增加一页空白页
+\clearpage
+ \phantom{s}
+ \thispagestyle{empty}
+\end{document}

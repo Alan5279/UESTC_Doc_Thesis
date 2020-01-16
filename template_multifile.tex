@@ -1,0 +1,105 @@
+%!TEX options = --shell-escape
+
+
+\documentclass[doctor]{thesis-uestc}
+
+
+\title{XXXXXXXXXXXX\\XXXXXXXXX}
+\englishtitle{XXXXXXXXXXXXXXXXXX}
+\author{XXXXXX}
+\englishauthor{XXXXXX}
+\advisor{XXX\chinesespace 教授}
+\englishadvisor{Prof. XXX}
+\school{XXXXXX}
+\englishschool{XXXXXX}
+\major{XXXXXX}
+\englishmajor{XXXXXXXXXXXX}
+\studentid{XXXXXXXXXXXX}
+
+\begin{document}
+
+\makecover
+
+% this is a thesis template with mutiple files: the chapters and the misc in standalone mode
+% to avoid too many files in current folder, template add extra direcotry: chapter and misc
+% please do not change the sequence of each one except the chapters themselves.
+% by FengYouzheng.
+% In fact, you have to alter several settings, including but not limit to, the cover, the layout and the style of the manuscript, so as to fit for the requirements of uestc thesis. So good luck.
+% by Zhiyuan Ma.
+
+% abstract
+\include{misc/chinese_abstract}
+\include{misc/english_abstract}
+%为了方便打印，留出空白页的代码，其中的数字根据当前要保留的页码-2来设置
+%{
+%\clearpage
+% \phantom{s}
+% \thispagestyle{empty}
+% \setcounter{page}{4}
+%   \setcounter{pseudopage}{4}
+% }
+% table of contents
+\thesistableofcontents
+%图形目录，如果有的话，放这里
+%\thesisfigurelist
+%%表格目录，如果有的话，放这里
+%\thesistablelist
+
+
+
+%缩略词表，如果有的话，在这里
+\include{chapter/Abbreviations}
+
+%主要符号表，如果有的话，在这里
+\include{chapter/Symbols}
+
+% thesis contents
+\include{chapter/exordium_t}
+\include{chapter/c2_t}
+\include{chapter/c3_t}
+\include{chapter/c4_t}
+\include{chapter/c5_t}
+
+
+% misc
+\include{misc/acknowledgement}
+\thesisloadbibliography[nocite]{reference}
+
+%
+% Uncomment following codes to load bibliography database with native
+% \bibliography command.
+%
+% \nocite{*}
+% \bibliographystyle{thesis-uestc}
+% \bibliography{reference}
+%
+
+% comment while no need
+%\include{misc/appendix}
+%\thesisloadachievement{publications} %这个少了一些定义，所以用不了。
+
+\begin{thesisachievement}
+\setlength{\baselineskip}{20 pt}	%调整下行间距
+\addtolength{\itemsep}{-2 ex}	%用来调整行间距，默认会空一行，有时候太长了
+\section*{发表论文}
+\bibitem{1}
+\textbf{X. XX}, X. XX, X. XX. XXXXXXXXXXXXX[J]. XXXXXXXXXX, 2018, 2018:1-17（SCI，IF X.XXX）
+\bibitem{2}
+\textbf{X. XX}, X. XX, X. XX. XXXXXXXXXXXXX[J]. XXXXXXXXXX, 2018, 2018:1-17（SCI，IF X.XXX）
+\vspace{-5 pt}	%调整间距
+\section*{著作}
+写自己的著作
+\section*{主研/参研项目}
+\bibitem[1]{1} 参与，编号：XXXXXXXXXX，四川省科技厅，XXXXXXXXX
+\bibitem[2]{2} 参与，编号：XXXXXXXXXX，四川省科技厅，XXXXXXXXX
+\bibitem[3]{3} 参与，编号：XXXXXXXXXX，四川省科技厅，XXXXXXXXX
+
+
+%[M]John Wiley \& Sons，2017， 163-210
+
+\end{thesisachievement}
+
+%\include{misc/translate_original}
+%\include{misc/translate_chinese}
+
+\end{document}
