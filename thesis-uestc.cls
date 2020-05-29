@@ -394,8 +394,8 @@ right=3 cm, left=3 cm, %调整左右页边距
 \setlength{\subfigcapskip}{0pt}
 \setlength{\intextsep}{9pt}
 
-\captionsetup[subfigure]
-  {labelformat=simple, listofformat=subsimple, farskip = 0pt}
+%\captionsetup[subfigure]
+% {labelformat=simple, listofformat=subsimple, farskip = 0pt}
 
 \makeatletter
 \AtBeginEnvironment{figure}{
